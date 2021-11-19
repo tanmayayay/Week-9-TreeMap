@@ -13,3 +13,5 @@ using the data here:
         {"parentColumn": "C", "childColumn":"H","val":60}
     ]
 ```
+
+<b>Note</b><p>you need to stratify data manually, or using an algorithm such that echarts can convert it into visualization. In case you go with a code, it should be a recursive code to cover all the children</p><p>The top parent in echart requires a parent node.</p>
