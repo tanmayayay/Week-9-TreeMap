@@ -2,7 +2,7 @@
 <html style = "height: 100%">
     <head>
         <meta charset = "utf-8">
-        <script src="data/echarts.min.js"></script>
+        <script src="Execise/libs/echarts.min.js"></script>
         <title>
             E-Charts TreeMap
         </title>
@@ -11,7 +11,7 @@
     <body style = "height: 100%; margin: 0">
         <div id = "container" style = "height: 100%"></div>
         <script type = "text/javascript">
-            d3.json("./data/treeData.json").then(function (Data) {
+            d3.json("./data/Tree-Map Data.json").then(function (Data) {
 
                 let dom = document.getElementById("container");
                 let treeMap = echarts.init(dom);
