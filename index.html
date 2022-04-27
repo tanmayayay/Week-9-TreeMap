@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html style = "height: 100%">
+    <head>
+        <meta charset = "utf-8">
+        <script src="data/echarts.min.js"></script>
+        <title>
+            E-Charts TreeMap
+        </title>
+        <script src="./js/d3.js"></script>
+    </head>
+    <body style = "height: 100%; margin: 0">
+        <div id = "container" style = "height: 100%"></div>
+        <script type = "text/javascript">
+            d3.json("./data/treeData.json").then(function (Data) {
+
+                let dom = document.getElementById("container");
+                let treeMap = echarts.init(dom);
+                treeMap.setOption({
+                    title: {
+                        text: 'E-Charts Tree-Map by Tanmay Singh',
+                        left: 'center'
+                    },
+                    tooltip: {
+                        formatter: function (info) {
+                        var value = info.value;
+                        var treePathInfo = info.treePathInfo;
+                        var treePath = [];
+                        for (var i = 1; i < treePathInfo.length; i++) {
+                            treePath.push(treePathInfo[i].name);
+                        }
+                        return [
+                            '<div class="tooltip-title">' +
+                            echarts.format.encodeHTML(treePath.join('/')) +
+                            '</div>',
+                            'Value: ' + echarts.format.addCommas(value)
+                        ].join('');
+                        }
+                    },
+                    series: [
+                        {
+                            name: 'Data',
+                            type: 'treemap',
+                            data: Data,
+                            label: {
+                                show: true,
+                                formatter: '{b}'
+                            },
+                            upperLabel: {
+                                show: true,
+                                height: 30
+                            },
+                            itemStyle: {
+                                borderColor: '#777'
+                            },
+                            levels: [
+                                {
+                                    itemStyle: {
+                                    borderWidth: 5,
+                                    borderColor: '#333',
+                                    gapWidth: 1
+                                    },
+                                    upperLabel: {
+                                        show: false
+                                    }
+                                },
+                                {
+                                    color:  ['green', 'blue'],
+                                    colorMappingBy: 'value',
+                                    itemStyle: {
+                                    gapWidth: 2,
+                                    borderWidth:1,
+                                    borderColor: '#444'
+                                    }
+                                },
+                                {
+                                    colorSaturation: [0.1, 0.3],
+                                    itemStyle: {
+                                        borderWidth: 5,
+                                        gapWidth: 1,
+                                        borderColorSaturation: 0.4
+                                    }
+                                }
+
+                                ],
+
+                        }
+                    ]
+                }, true);
+            });
+
+
+
+        </script>
+
+
+    </body>
+</html>
