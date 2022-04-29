@@ -8,17 +8,17 @@
                 "value": 80,
                 "children": [
                     {
-                        "name": "D",
+                        "name": "C",
                         "value": 30
                     },
                     {
-                        "name": "E",
+                        "name": "D",
                         "value": 50
                     }
                 ]
             },
             {
-                "name": "C",
+                "name": "E",
                 "value": 120,
                 "children": [
                     {
