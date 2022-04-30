@@ -64,7 +64,7 @@
 <script>
     let us_treemap = {} // final clustered data
 
-    d3.csv("../data/us_county_level_population.csv",d3.autoType).then(function (data){
+    d3.csv("https://raw.githubusercontent.com/tanmayayay/Week-9-TreeMap/main/data/us_county_level_population.csv",d3.autoType).then(function (data){
 
         let svg = d3.selectAll("svg");
         let w = parseInt(svg.style("width"), 10);
