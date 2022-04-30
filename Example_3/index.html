@@ -12,7 +12,7 @@
        <div id="container" style="height: 100%"></div>
        <script type="text/javascript">
 
-d3.json("../data/us_population.json").then(function (Data) {
+d3.json("https://raw.githubusercontent.com/tanmayayay/Week-9-TreeMap/main/data/us_population.json").then(function (Data) {
 
     let dom = document.getElementById("container"); // select container
     let treeMap = echarts.init(dom); // initiate echarts object
