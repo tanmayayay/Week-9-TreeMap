@@ -12,7 +12,7 @@
     <body style = "height: 100%; margin: 0">
         <div id = "container" style = "height: 100%"></div>
         <script type = "text/javascript">
-            d3.json("./data/Tree-Map Data.json").then(function (Data) {
+            d3.json("https://raw.githubusercontent.com/tanmayayay/Week-9-TreeMap/main/data/Tree-Map%20Data.json").then(function (Data) {
 
                 let dom = document.getElementById("container");
                 let treeMap = echarts.init(dom);
